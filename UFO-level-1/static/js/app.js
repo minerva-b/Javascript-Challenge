@@ -40,10 +40,13 @@ function runEnter() {
     // Getting the value property of the input field element:
     var inputValue = inputElement.property("value");
     console.log(inputValue);
-    console.log(tableData);
+    // console.log(tableData);
 
     // Creating filter search:
     var filteredData = tableData.filter(date => date.datetime === inputValue);
     console.log(filteredData); 
 
-};
+    // Set the span tag (id="output") to display the data that was entered to filter the table:
+    d3.select("#output").text(inputValue);
+
+}
