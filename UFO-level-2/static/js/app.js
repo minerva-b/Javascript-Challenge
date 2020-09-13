@@ -59,43 +59,53 @@ function runEnter() {
     var filteredShape = tableData.filter(searchShape => searchShape.shape === inputShapeValue);
 
     // Loop through the filtered data based on user input elements:
-    filteredDate.map((UFOsightings) => {
+    // Declaring a new variable that should filter anywhere between 1-5 inputs:
+    // Then, appending to the tableData:
+    var allFilteredData = (filteredDate && filteredCity && filteredState && filteredCountry && filteredShape)
+
+    // ^^^REVISIT this section of code to be able to successfully run all 5 filters all at once and individually^^^ //
+    // Note to self: Using && works to run all 5 filters together and filteredShape alone
+    // Whereas using || works to run all 5 filters together and filteredDate alone
+    // (filteredDate || filteredCity || filteredState || filteredCountry || filteredShape) 
+
+    allFilteredData.map((UFOsightings) => {
         var row = tbody.append("tr");
         Object.entries(UFOsightings).forEach(([key, value]) => {
           var cell = row.append("td");
           cell.text(value);
         });
       });
-    filteredCity.map((cityFilter) => {
-      var row = tbody.append("tr");
-      Object.entries(cityFilter).forEach(([key, value]) => {
-        var cell = row.append("td");
-        cell.text(value);
-      });
-    });
-    filteredState.map((stateFilter) => {
-      var row = tbody.append("tr");
-      Object.entries(stateFilter).forEach(([key, value]) => {
-        var cell = row.append("td");
-        cell.text(value);
-      });
-    });
-    filteredCountry.map((countryFilter) => {
-      var row = tbody.append("tr");
-      Object.entries(countryFilter).forEach(([key, value]) => {
-        var cell = row.append("td");
-        cell.text(value);
-      });
-    });
-    filteredShape.map((shapeFilter) => {
-      var row = tbody.append("tr");
-      Object.entries(shapeFilter).forEach(([key, value]) => {
-        var cell = row.append("td");
-        cell.text(value);
-      });
-    });
+    // filteredCity.map((UFOsightings) => {
+    //   var row = tbody.append("tr");
+    //   Object.entries(UFOsightings).forEach(([key, value]) => {
+    //     var cell = row.append("td");
+    //     cell.text(value);
+    //   });
+    // });
+    // filteredState.map((UFOsightings) => {
+    //   var row = tbody.append("tr");
+    //   Object.entries(UFOsightings).forEach(([key, value]) => {
+    //     var cell = row.append("td");
+    //     cell.text(value);
+    //   });
+    // });
+    // filteredCountry.map((UFOsightings) => {
+    //   var row = tbody.append("tr");
+    //   Object.entries(UFOsightings).forEach(([key, value]) => {
+    //     var cell = row.append("td");
+    //     cell.text(value);
+    //   });
+    // });
+    // filteredShape.map((UFOsightings) => {
+    //   var row = tbody.append("tr");
+    //   Object.entries(UFOsightings).forEach(([key, value]) => {
+    //     var cell = row.append("td");
+    //     cell.text(value);
+    //   });
+    // });
 };
 
+// Creating a function to refresh the table:
 function refreshPage(){
   window.location.reload();
 } 
