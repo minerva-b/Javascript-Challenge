@@ -65,12 +65,15 @@ body {
   margin-top: 10px;
 }
 
+.btn {
+  border-color: white;
+}
+
 select {
   display: block;
   width: 100%;
   padding: 8px;
   color: #8e979f;
-  outline: none;
 }
 
 #table-area th {

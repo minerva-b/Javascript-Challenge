@@ -60,6 +60,8 @@
                     </ul>
                   </div>
                   <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+                  <input type="reset" value="Clear Filters" class="btn btn-default">
+                  <button type="button" class="btn btn-default" onClick="refreshPage()">Reset Table</button>
                 </form>
               </div>
             </div>
@@ -79,7 +81,8 @@
                   <th class="table-head">Comments</th>
                 </tr>
               </thead>
-              <tbody id="searchResults"></tbody>
+              <tbody id="searchResults"> 
+              </tbody>
             </table>
           </div>
         </div>
