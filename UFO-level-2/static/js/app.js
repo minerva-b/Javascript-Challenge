@@ -17,7 +17,7 @@ tableData.map((UFOsightings) => {
     });
   });
 
-// Using a form so the user(s) can filter through the tags of UFO sightings:
+// Using a form so the user can filter through the data of UFO sightings:
 // Selecting the 'filter table' aka '#filter-btn' button:
 var button = d3.select("#filter-btn");
 // Selecting the '.form-control' form:
@@ -70,7 +70,7 @@ function runEnter() {
 
     allFilteredData.map((UFOsightings) => {
         var row = tbody.append("tr");
-        Object.entries(UFOsightings).forEach(([key, value]) => {
+        Object.entries(UFOsightings).map(([key, value]) => {
           var cell = row.append("td");
           cell.text(value);
         });
