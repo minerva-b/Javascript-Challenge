@@ -57,3 +57,7 @@ function runEnter() {
         });
       });
 };
+
+function refreshPage(){
+  window.location.reload();
+} 
